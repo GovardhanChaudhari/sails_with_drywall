@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    block head
+      title #{title}
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // STYLES
+    link(rel="stylesheet", href="/styles/about.css")
+    link(rel="stylesheet", href="/styles/bootstrap-theme.css")
+    link(rel="stylesheet", href="/styles/bootstrap.css")
+    link(rel="stylesheet", href="/styles/importer.css")
+    // STYLES END
+    block neck
+  body
+    div.navbar.navbar-default.navbar-fixed-top
+      div.container
+        div.navbar-header
+          a.navbar-brand(href='/')
+            img.navbar-logo(src='/images/logo-symbol-64x64.png')
+            span.navbar-brand-label #{projectName}
+          button.navbar-toggle.collapsed(data-toggle='collapse', data-target='.my-navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.navbar-collapse.my-navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li: a(href='/') Home
+            li: a(href=urls.about) About
+            li: a(href=urls.signup) Sign Up
+            li: a(href=urls.contact) Contact
+          ul.nav.navbar-nav.navbar-right
+            if user && user.username
+              li: a(href='#{user.defaultReturnUrl()}')
+                i.fa.fa-user
+                |  #{user.username}
+            else
+              li: a(href=urls.login)
+                i.fa.fa-user
+                |  Sign In
+
+    div.page
+      div.container
+        block body
+
+    div.footer
+      div.container
+        span.copyright.pull-right
+          |&#169; #{copyrightYear} #{copyrightName}
+        ul.links
+          li: a(href='/') Home
+          li: a(href=urls.contact) Contact
+        div.clearfix
+
+    div.ajax-spinner
+      img(src='/images/ajax-pulse.gif')
+
+    // The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
+    // SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    script(src="/js/dependencies/jquery/jquery.js")
+    script(src="/js/html5shiv/html5shiv.js")
+    script(src="/js/jquery.cookie/jquery.cookie.js")
+    script(src="/js/momentjs/moment.js")
+    script(src="/js/respond/respond.js")
+    script(src="/js/underscore/underscore.js")
+    // SCRIPTS END
+
+    block feet

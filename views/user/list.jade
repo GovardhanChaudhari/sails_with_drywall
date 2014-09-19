@@ -1,0 +1,19 @@
+extends ../layouts/default
+block body
+    table.table.table-striped
+        thead
+            tr
+                td User Name
+                td Email
+                td
+                    a(href='/user/new') New User
+        tbody
+            each user in users
+                tr
+                    if user.username
+                        td
+                            a(href='/user/#{user.id}')=user.username
+                        td=user.email
+                        td
+                            a(href="/user/edit/#{user.id}") Edit
+                            a(href="/user/destroy/#{user.id}") Delete

@@ -1,0 +1,5 @@
+views/*
+.tmp/*
+/.tmp/*
+.git/*
+.idea/*

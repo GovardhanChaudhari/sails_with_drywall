@@ -1,0 +1,6 @@
+extends ../layouts/default
+block body
+    form(method="PUT",action="/user/update/#{user.id}")
+        include form_body
+        button(type="submit") Save User
+

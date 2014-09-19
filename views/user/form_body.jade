@@ -1,0 +1,10 @@
+if user
+    input(name="username", value="#{user.username}")
+    br
+    input(name="email", value="#{user.email}")
+    input(type="hidden",name="id",value="#{user.id}")
+else
+    input(name="username", placeholder="Enter User Name")
+    br
+    input(name="email", placeholder="Enter Email")
+br

@@ -1,0 +1,6 @@
+extends ../layouts/default
+block body
+    form(method="POST",action="/user/create")
+        include form_body
+        button(type="submit") Create New User
+

@@ -1,0 +1,12 @@
+extends layouts/default
+block body
+    if user
+        div
+            a(href="/logout") Logout
+            br
+            a(href="/user") Users
+            br
+            a(href="/account") Accounts
+    else
+        div
+            a(href="/login") Login

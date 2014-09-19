@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+    // Viewport mobile tag for sensible mobile support
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    block styles
+
+  body
+    block body
+
+    // The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
+    // SCRIPTS
+    script(src="/js/dependencies/sails.io.js")
+    script(src="/js/dependencies/jquery/jquery.js")
+    script(src="/js/html5shiv/html5shiv.js")
+    script(src="/js/jquery.cookie/jquery.cookie.js")
+    script(src="/js/momentjs/moment.js")
+    script(src="/js/respond/respond.js")
+    script(src="/js/underscore/underscore.js")
+    // SCRIPTS END
+
